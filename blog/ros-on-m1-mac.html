@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ROS on M1 Mac</title>
+  <meta name='description' content='Steps to install Robot operating system on M1 Mac using Multipass'>
+
+  <link rel="canonical" href="http://localhost:6060/blog/ros-on-m1-mac">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ROS on M1 Mac – Priyanshu Kumar">
+  <meta name="twitter:description" content="Steps to install Robot operating system on M1 Mac using Multipass">
+  <meta name="twitter:image:src" content="http://localhost:6060/uploads/ros-logo-1.png">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="ROS on M1 Mac – Priyanshu Kumar">
+  <meta property="og:description" content="Steps to install Robot operating system on M1 Mac using Multipass">
+  <meta property="og:image" content="http://localhost:6060/uploads/ros-logo-1.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  
+
+
+</head>
+
+<body>
+
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCGPZ8CHFX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-QCGPZ8CHFX');
+</script>
+    
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            <img class="logo__image" src="/images/logo.png" alt="Priyanshu Kumar">
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/projects/" class="nav__link">Projects</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/priyanshu2k02" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/kumarpriyanshu2k2" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.instagram.com/priyanshu_2k02/" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/priyanshu-kumar-2b7948222/" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/uploads/ros-logo-1.png" alt="ROS on M1 Mac">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/ros" class="post-tags__tag">ROS</a>
+            
+              <a href="/tag/multipass" class="post-tags__tag">Multipass</a>
+            
+              <a href="/tag/ubuntu" class="post-tags__tag">Ubuntu</a>
+            
+              <a href="/tag/apple-m1" class="post-tags__tag">Apple-M1</a>
+            
+          </div>
+          
+
+
+          <h1 class="post__title">ROS on M1 Mac</h1>
+
+          <div class="post__meta">
+            <div class="post__author-image">
+              <img loading="lazy" src="/images/avatar.jpg" alt="Priyanshu Kumar">
+            </div>
+
+            <div class="post__meta-bottom">
+              <div class="post__author">Priyanshu Kumar</div>
+              <time class="post__date" datetime="2022-06-02T22:09:30+05:30">02 Jun 2022</time>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <h1 id="ros_m1_mac_multipass">ROS_M1_MAC_Multipass</h1>
+
+<p>steps to install robot operating system on m1 mac using multipass</p>
+
+<h3 id="1-install-multipass">1. install <a href="https://multipass.run/" target="_blank">multipass</a></h3>
+
+<p>to read more: <a href="https://multipass.run/docs" target="_blank">multipass Docs</a></p>
+
+<h3 id="2-after-installing-multipass-start-a-ubuntu-instance-in-terminal">2. after installing multipass start a ubuntu instance in terminal.</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ multipass launch -n ros-neotic --mem 3G --disk 15G 20.04
+</code></pre></div></div>
+
+<p>you can check the status of your instance using $ multipass info ros-neotic</p>
+
+<h3 id="3-activate-your-instance-shell">3. activate your instance shell</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ multipass shell ros-neotic
+</code></pre></div></div>
+
+<h3 id="4-run-the-following-commands-in-your-instance-shell">4. Run the following commands in your instance shell</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install curl
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'
+</code></pre></div></div>
+
+<h3 id="5-set-up-your-keys">5. set-up your keys</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+</code></pre></div></div>
+
+<h3 id="6-installation">6. installation</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt update
+$ sudo apt upgrade --fix-missing
+$ sudo apt install ros-noetic-desktop-full --fix-missing
+</code></pre></div></div>
+
+<h3 id="7-environment-setup">7. Environment setup</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source /opt/ros/noetic/setup.bash
+$ echo "source /opt/ros/noetic/setup.bash" &gt;&gt; ~/.bashrc
+$ source ~/.bashrc
+</code></pre></div></div>
+
+<h3 id="8-install-dependencies">8. install dependencies</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+</code></pre></div></div>
+
+<h3 id="9-initialize-ros">9. initialize ros</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install python3-rosdep
+$ sudo rosdep init
+$ rosdep update
+</code></pre></div></div>
+
+<h3 id="10-setup-graphic-desktopoptional">10. setup graphic desktop(optional)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ multipass shell ros-neotic
+$ sudo apt update
+$ sudo apt install ubuntu-desktop xrdp
+# setup password for your account
+$ sudo passwd ubuntu
+# enter your password twice ### 1. next you'll need to install parallels client from app store
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/93030904/169555511-302c7c25-f616-4932-ae98-02541b897807.jpg" alt="Screenshot 2022-05-20 at 8 26 34 PM" /></p>
+
+<h3 id="2-obtain-the-ip-address-of-your-instance-by-running-the-command-in-your-system-terminal">2. Obtain the ip address of your instance by running the command in your system terminal</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ multipass info ros-neotic
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/93030904/169558171-db383a93-a9f6-46e8-906b-26330291a1be.jpg" alt="Screenshot 2022-05-20 at 8 29 26 PM" /></p>
+
+<h3 id="3-open-parallels-client-and-click-on-filenew-connection-if-you-dont-get-a-prompt">3. open parallels client and click on file&gt;new connection if you don’t get a prompt</h3>
+
+<p><img src="https://user-images.githubusercontent.com/93030904/169555853-c3f095e8-eb19-4bf4-ab2a-4c84a9dd6b65.jpg" alt="Screenshot 2022-05-20 at 8 27 32 PM" /></p>
+
+<h3 id="4-create-a-standard-rdp">4. create a standard RDP</h3>
+
+<p><img src="https://user-images.githubusercontent.com/93030904/169556586-282f1253-605e-4ae2-bbb1-228115ea2eb9.jpg" alt="Screenshot 2022-05-20 at 8 32 09 PM" /></p>
+
+<h3 id="5-enter-your-instances-ip-address-in-the-server-field">5. Enter your instance’s ip address in the server field</h3>
+
+<p><img src="https://user-images.githubusercontent.com/93030904/169557482-f60ddc63-3811-4d57-b7d9-820453c8c2a1.png" alt="image" /></p>
+
+<h3 id="6-login-into-your-instance-using-the-password-you-created-in-your-instance">6. login into your instance using the password you created in your instance</h3>
+
+<p><img src="https://user-images.githubusercontent.com/93030904/169557648-204b68bd-b088-4549-980f-da6ec68c1c93.jpg" alt="Screenshot 2022-05-20 at 8 34 46 PM" /></p>
+
+<p>now you can access the gui of your instance</p>
+
+<p><img src="https://user-images.githubusercontent.com/93030904/169557983-558efc6e-3ac2-4ad3-aba3-2681ae7c7d33.jpg" alt="Screenshot 2022-05-20 at 8 39 45 PM" /></p>
+
+<h2 id="all-done--">All done ! 🥳🎉</h2>
+
+<p>to test if it is working properly visit <a href="http://wiki.ros.org/ROS/Tutorials">ROS Tutorials</a></p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title">Share this Post</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=ROS%20on%20M1%20Mac&url=http://localhost:6060/blog/ros-on-m1-mac"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:6060/blog/ros-on-m1-mac"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__pinterest"
+        href="http://pinterest.com/pin/create/button/?url=http://localhost:6060/blog/ros-on-m1-mac&amp;media=http://localhost:6060/uploads/ros-logo-1.png&amp;description=ROS%20on%20M1%20Mac"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:6060/blog/ros-on-m1-mac&title=ROS%20on%20M1%20Mac&summary=Steps%20to%20install%20Robot%20operating%20system%20on%20M1%20Mac%20using%20Multipass&source=Vonge"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+  </article>
+</div>
+<!-- end post -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/blog/100-days-of-code">
+    <div class="prev__image">
+      <img loading="lazy" src="/uploads/100doc.webp" alt="ROS on M1 Mac">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">100 Days Of Code !!</h2>
+    </div>
+  </a>
+  
+
+  
+  <a class="post__next" href="/blog/lambda-calculus-and-lambda-functions">
+    <div class="next__box">
+      <span class="post__nav post__nav__next">Next post</span>
+      <h2 class="post__nav__title">Lambda calculus and Lambda Functions</h2>
+    </div>
+    <div class="next__image">
+      <img loading="lazy" src="/uploads/lambda.png" alt="ROS on M1 Mac">
+    </div>
+  </a>
+  
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tags#ROS" class="section__link related-tag">See all<span> ROS</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+      
+            
+      
+            
+
+              <div class="article col col-4 col-d-6 col-t-12">
+                <div class="article__inner">
+              
+                  
+                  <div class="image-wrap">
+                    <a class="article__image" href="/blog/how-to-install-mediapipe-on-m1-mac">
+                      <img loading="lazy" src="/uploads/mediapipe.png" alt="Steps to install mediapipe on m1 mac">
+                    </a>
+                  </div>
+                  
+              
+                  <div class="article__content">
+              
+                    
+                    <div class="article-tags__box">
+                      
+                      <a href="/tag/mediapipe" class="article__tag">mediapipe</a>
+                      
+                      <a href="/tag/tensorflow" class="article__tag">tensorflow</a>
+                      
+                      <a href="/tag/opencv" class="article__tag">OpenCV</a>
+                      
+                      <a href="/tag/apple-m1" class="article__tag">Apple-M1</a>
+                      
+                    </div>
+                    
+              
+                    <h2 class="article__title">
+                      <a href="/blog/how-to-install-mediapipe-on-m1-mac">Steps to install mediapipe on m1 mac</a>
+                    </h2>
+              
+                    <p class="article__excerpt">
+                      steps for installing mediapipe
+                    </p>
+              
+                    <div class="article__meta">
+                      <div class="article__author-image">
+                        <img loading="lazy" src="/images/avatar.jpg" alt="Priyanshu Kumar">
+                      </div>
+                      <div class="article-info">
+                        <div class="article__author-name">Priyanshu Kumar</div>
+                        <span class="article__date"><time datetime="2022-09-19T05:30:00+05:30">19 Sep 2022</time></span>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+            
+                
+              
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+            
+            
+      
+            
+      
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="//us14.list-manage.com/subscribe/post?u=1cf6e15737eb4c0e455366921&amp;id=ec77fbdbc6"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+    <!-- 
+        Bookshop components are accessed using the bookshop tag, 
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/priyanshu2k02" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/kumarpriyanshu2k2" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.instagram.com/priyanshu_2k02/" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/priyanshu-kumar-2b7948222/" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/projects/" class="footer_nav__link">Projects</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; <a href="/">Priyanshu Kumar</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>

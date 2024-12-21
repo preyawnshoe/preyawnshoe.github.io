@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Space shooter</title>
+  <meta name='description' content='a portfolio site template for Priyanshu Kumar'>
+
+  <link rel="canonical" href="http://localhost:6060/project/space-shooter-1">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Space shooter – Priyanshu Kumar">
+  <meta name="twitter:description" content="A classical space shooter game built using a Pygame a Python library
+">
+  <meta name="twitter:image:src" content="http://localhost:6060/uploads/copy-of-hangman.png">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="Space shooter – Priyanshu Kumar">
+  <meta property="og:description" content="A classical space shooter game built using a Pygame a Python library
+">
+  <meta property="og:image" content="http://localhost:6060/uploads/copy-of-hangman.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  
+
+
+</head>
+
+<body>
+
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCGPZ8CHFX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-QCGPZ8CHFX');
+</script>
+    
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            <img class="logo__image" src="/images/logo.png" alt="Priyanshu Kumar">
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/projects/" class="nav__link">Projects</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/priyanshu2k02" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/kumarpriyanshu2k2" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.instagram.com/priyanshu_2k02/" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/priyanshu-kumar-2b7948222/" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+    <div class="container">
+
+  <!--bookshop-live name(page-heading/page-heading.jekyll.html) params(title=page.title description=page.subtitle) context() -->
+          
+<div class="container">
+  <div class="c-page-heading">
+    <h1 class="c-page-heading__title">Space shooter</h1>
+    
+      <p class="c-page-heading__description">Pygame Project</p>
+    
+  </div>
+</div>
+          <!--bookshop-live end-->
+  
+  <!--bookshop-live name(page-image/page-image.jekyll.html) params(image=page_image) context() -->
+          
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="c-page-image animate">
+        <img loading="lazy" src="/uploads/copy-of-hangman.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+          <!--bookshop-live end-->
+
+  <div class="page animate">
+    <p>A classical space shooter game built using a Pygame a Python library</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Day 26 of <a href="https://twitter.com/hashtag/100DaysOfCode?src=hash&amp;ref_src=twsrc%5Etfw">#100DaysOfCode</a> :<br />- Built a Space shooter game using Pygame<br />- applied different concepts of OOP ( Inheritance, Polymorphism)<br />This took longer than expected, I took help from <a href="https://twitter.com/TechWithTimm?ref_src=twsrc%5Etfw">@TechWithTimm</a> tutorials<br />source code: <a href="https://t.co/YXI9GAzNX4">https://t.co/YXI9GAzNX4</a><br />Github: <a href="https://t.co/NEJKGn07zu">https://t.co/NEJKGn07zu</a> <a href="https://t.co/kMe7Eyep92">pic.twitter.com/kMe7Eyep92</a></p>&mdash; Priyanshu Kumar (@priyanshu2k02) <a href="https://twitter.com/priyanshu2k02/status/1512325603898249221?ref_src=twsrc%5Etfw">April 8, 2022</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="source-code-">Source Code :</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import pygame
+import os
+import random
+
+pygame.font.init()
+
+\## Parent Screen
+
+WIDTH, HEIGHT = 750, 750
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Space Shooter")
+
+\## Objects
+
+\# Ships
+
+RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_red_small.png"))
+GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_green_small.png"))
+BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_blue_small.png"))
+YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
+
+\# Lasers
+
+RED_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_red.png"))
+GREEN_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_green.png"))
+YELLOW_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_yellow.png"))
+BLUE_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_blue.png"))
+
+\## Background
+
+BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-black.png")), (WIDTH, HEIGHT))
+
+class Ship:
+    COOLDOWN = 60
+
+    def __init__(self, x, y, health=100):
+        self.x = x
+        self.y = y
+        self.health = health
+        self.ship_image = None
+        self.laser_image = None
+        self.lasers = []
+        self.cool_down_counter = 0
+
+    def cooldown(self):
+        if self.cool_down_counter &gt;= self.COOLDOWN:
+            self.cool_down_counter = 0
+        elif self.cool_down_counter &gt; 0:
+            self.cool_down_counter += 1
+
+    def shoot(self):
+        self.cooldown()
+        if self.cool_down_counter == 0:
+            laser = Laser(self.x, self.y, self.laser_image)
+            self.lasers.append(laser)
+            self.cool_down_counter = 1
+
+    def move_lasers(self, vel, obj):
+        self.cooldown()
+        for laser in self.lasers:
+            laser.move(vel)
+            if laser.off_screen(HEIGHT):
+                self.lasers.remove(laser)
+            elif laser.collision(obj):
+                obj.health -= 10
+                self.lasers.remove(laser)
+
+    def draw(self, window):
+        window.blit(self.ship_image, (self.x, self.y))
+        for laser in self.lasers:
+            laser.draw(window)
+
+    def get_height(self):
+        return self.ship_image.get_height()
+
+    def get_width(self):
+        return self.ship_image.get_width()
+
+class Enemy(Ship):
+    COLOR_MAP = {
+        "red": (RED_SPACE_SHIP, RED_LASER),
+        "green": (GREEN_SPACE_SHIP, GREEN_LASER),
+        "blue": (BLUE_SPACE_SHIP, BLUE_LASER)
+    }
+
+    def __init__(self, x, y, color, health=100):
+        super().__init__(x, y, health)
+        self.ship_image, self.laser_image = self.COLOR_MAP[color]
+        self.mask = pygame.mask.from_surface(self.ship_image)
+
+    def move(self, vel):
+        self.y += vel
+
+class PLAYER(Ship):
+    def __init__(self, x, y, health=100):
+        super().__init__(x, y, health)
+        self.score = 0
+        self.ship_image = YELLOW_SPACE_SHIP
+        self.laser_image = YELLOW_LASER
+        self.mask = pygame.mask.from_surface(self.ship_image)
+        self.max_health = self.health
+
+    def move_lasers(self, vel, objs):
+        self.cooldown()
+        for laser in self.lasers:
+            laser.move(vel)
+            if laser.off_screen(HEIGHT):
+                self.lasers.remove(laser)
+            else:
+                for obj in objs:
+                    if laser.collision(obj):
+                        obj.health -= 10
+                        objs.remove(obj)
+                        self.lasers.remove(laser)
+                        self.score += 1
+
+    def move(self, keys, vel):
+        if keys[pygame.K_a] and self.x - vel &gt; 0:
+            self.x -= vel
+        if keys[pygame.K_d] and self.x + vel + self.ship_image.get_width() &lt; WIDTH:
+            self.x += vel
+        if keys[pygame.K_w] and self.y - vel &gt; 0:
+            self.y -= vel
+        if keys[pygame.K_s] and self.y + vel + self.ship_image.get_height() &lt; HEIGHT - 20:
+            self.y += vel
+        if keys[pygame.K_SPACE]:
+            self.shoot()
+
+    def draw(self, window):
+        super().draw(window)
+        self.healthbar(window)
+        self.score_board(window)
+
+    def healthbar(self, window):
+        pygame.draw.rect(window, (255, 0, 0),
+                         (self.x, self.y + self.ship_image.get_height() + 10, self.ship_image.get_width(), 10))
+        pygame.draw.rect(window, (0, 255, 0),
+                         (self.x, self.y + self.ship_image.get_height() + 10,
+                          self.ship_image.get_width() * (self.health / self.max_health), 10))
+
+    def score_board(self, window):
+        score_font = pygame.font.SysFont("arial", 30)
+        title_label = score_font.render(f"SCORE: {self.score}", 1, (255, 255, 255))
+        window.blit(title_label, (WIDTH / 2 - title_label.get_width() / 2, 10))
+
+class Laser:
+    def __init__(self, x, y, img):
+        self.x = x
+        self.y = y
+        self.img = img
+        self.mask = pygame.mask.from_surface(self.img)
+
+    def draw(self, window):
+        window.blit(self.img, (self.x, self.y))
+
+    def move(self, vel):
+        self.y += vel
+
+    def off_screen(self, height):
+        return not (self.y &lt;= height and self.y &gt;= 0)
+
+    def collision(self, obj):
+        return collide(obj, self)
+
+def collide(obj1, obj2):
+    offset_x = obj2.x - obj1.x
+    offset_y = obj2.y - obj1.y
+    return obj1.mask.overlap(obj2.mask, (offset_x, offset_y)) != None
+
+def main():
+    run = True
+    FPS = 120
+    level = 0
+    lives = 5
+    enemies = []
+    wave_length = 5
+    lost = False
+    enemy_vel = 1
+    laser_vel = 8
+    player_vel = 10
+    clock = pygame.time.Clock()
+    main_font = pygame.font.SysFont("arial", 50)
+    lost_font = pygame.font.SysFont("arial", 50)
+    lost_count = 0
+    player = PLAYER(300, 630)
+
+    def redraw_window():
+        WIN.blit(BG, (0, 0))
+        lives_label = main_font.render(f"lives : {lives}", 1, (255, 255, 255))
+        level_label = main_font.render(f"level : {level}", 1, (255, 255, 255))
+        WIN.blit(lives_label, (10, 10))
+        WIN.blit(level_label, (WIDTH - level_label.get_width() - 10, 10))
+        player.draw(WIN)
+        for enemy in enemies:
+            enemy.draw(WIN)
+        player.draw(WIN)
+        if lost:
+            lost_label = lost_font.render("You lost!!", 1, (255, 255, 255))
+            WIN.blit(lost_label, (WIDTH / 2 - lost_label.get_width() / 2, 350))
+        pygame.display.update()
+
+    while run:
+        clock.tick(FPS)
+        if lost:
+            if lost_count &gt; FPS * 3:
+                run = False
+            else:
+                lost_count += 1
+                continue
+        if lives &lt;= 0 or player.health &lt;= 0:
+            lost = True
+            lost_count += 1
+
+        if len(enemies) == 0:
+            level += 1
+            wave_length += 5
+            for i in range(wave_length):
+                enemy = Enemy(random.randrange(100, WIDTH - 100), random.randrange(-1500, -100),
+                              random.choice(["red", "green", "blue"]))
+                enemies.append(enemy)
+        redraw_window()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+        keys = pygame.key.get_pressed()
+        player.move(keys, player_vel)
+        for enemy in enemies:
+            enemy.move(enemy_vel)
+            enemy.move_lasers(laser_vel, player)
+            if random.randrange(0, 4 * 60) == 1:
+                enemy.shoot()
+            if enemy.y + enemy.get_height() &gt; HEIGHT:
+                lives -= 1
+                enemies.remove(enemy)
+            if collide(enemy, player):
+                player.health -= 10
+                enemies.remove(enemy)
+        player.move_lasers(-laser_vel, enemies)
+
+def main_menue():
+    title_font = pygame.font.SysFont("arial", 70)
+    run = True
+    while run:
+        WIN.blit(BG, (0, 0))
+        title_label = title_font.render("Click to begin ...", 1, (255, 255, 255))
+        WIN.blit(title_label, (WIDTH / 2 - title_label.get_width() / 2, 350))
+        pygame.display.update()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                main()
+    pygame.quit()
+
+main_menue()
+</code></pre></div></div>
+
+<p> </p>
+
+  </div>
+
+  
+  <div class="project__navigation animate">
+    <a class="project__prev" href="/project/snake-game">
+      <div class="project__box">
+        <span class="project__nav__info">Next Project</span>
+        <h2 class="project__nav__title">Snake Game<i class="ion ion-md-arrow-round-forward arrow-right"></i></h2>
+      </div>
+    </a>
+  </div>
+  
+
+</div>
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="//us14.list-manage.com/subscribe/post?u=1cf6e15737eb4c0e455366921&amp;id=ec77fbdbc6"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+    <!-- 
+        Bookshop components are accessed using the bookshop tag, 
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/priyanshu2k02" target="_blank" rel="noopener" aria-label="twitter icon"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/kumarpriyanshu2k2" target="_blank" rel="noopener" aria-label="github icon"><i class="ion ion-logo-github"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.instagram.com/priyanshu_2k02/" target="_blank" rel="noopener" aria-label="instagram icon"><i class="ion ion-logo-instagram"></i></a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/priyanshu-kumar-2b7948222/" target="_blank" rel="noopener" aria-label="linkedin icon"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+    
+  </ul>
+</div>
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/projects/" class="footer_nav__link">Projects</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; <a href="/">Priyanshu Kumar</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>
